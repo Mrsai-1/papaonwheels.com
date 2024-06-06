@@ -7,46 +7,46 @@ const AllProducts = () => {
   const productHandler = async () => {
     const firmId = localStorage.getItem('FirmId');
     try {
-      const response = await fetch(`${API_URL}/product/${firmId}/products`);
-      const newProductsData = await response.json();
+      const responce = await fetch(`${API_URL}/product/${firmId}/products`);
+      const newProductsData = await responce.json();
       setProducts(newProductsData.products);
+      console.log(newProductsData);
     } catch (error) {
-      console.error("Failed to fetch products", error);
-      alert("Failed to fetch");
+      console.error("failed to fetch products", error);
+      alert("failed to fetch");
     }
   };
 
   useEffect(() => {
-    productHandler();
+    productHandler()
+  
   }, []);
 
-  const deleteProductsByID = (productId) => {
-    fetch(`${API_URL}/product/${productId}`, {
-      method: 'DELETE'
-    })
-    .then(response => {
-      if (response.ok) {
+  const deleteProductsByID = async (productId) => {
+    try {
+      const responce = await fetch(`${API_URL}/product/${productId}`, {
+        method: 'DELETE'
+      })
+      if (responce.ok) {
         alert("Product deleted Successfully...!");
         setProducts(prevProducts => prevProducts.filter(product => product._id !== productId));
-      } else {
-        throw new Error('Failed to delete product');
       }
-    })
-    .catch(error => {
-      console.error("Failed to delete ", error);
-      alert("Failed to delete");
-    });
-  };
+      console.log(responce)
 
+    }  catch (error) {
+        console.error("failed to delete ", error);
+        alert("failed to delete");
+      }
+  };
   return (
     <>
       {products.length === 0 ? (
-        <p>No products added</p>
+        <p>No products added </p>
       ) : (
         <table className="product-table">
           <thead>
             <tr>
-              <th>Product Name</th>
+              <th>Product Name </th>
               <th>Price</th>
               <th>Image</th>
               <th>Delete</th>
@@ -77,7 +77,8 @@ const AllProducts = () => {
         </table>
       )}
     </>
-  );
+  )
+  
 };
 
 export default AllProducts;
