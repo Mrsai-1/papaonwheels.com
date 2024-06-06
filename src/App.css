@@ -1,0 +1,116 @@
+
+.NavbarSelction{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+padding:0px 20px;
+
+height:10vh;
+background-color: navy;
+color:white
+}
+
+.SlideBarSection{
+ 
+  width:100%;
+  max-width:15%;
+  height:90vh;
+  background-color: lightgray;
+}
+.SlideBarSection ul li{
+  text-decoration: none;
+  list-style: none;
+  padding-bottom: 20px;
+  font-size: larger;
+  font-weight: 600;
+  
+}
+
+.register-slider{
+  display: flex;
+}
+
+.register-section{
+  border: 1px solid red;
+  position: relative;
+  left: 30%;
+  /* right: 47%; */
+  margin: 15% 0px;
+  width: 100%;
+  max-width: 30%;
+  
+}
+
+.form .form-group{
+  justify-content: space-around;
+  padding-bottom: 25px;
+}
+
+
+.login-section{
+  border: 1px solid red;
+  position: relative;
+  left: 26%;
+  top: -108px;
+  /* right: 47%; */
+  margin: 17% 0px;
+  width: 100%;
+  max-width: 30%;
+}
+  
+
+
+.login-form .form-group{
+  justify-content: space-around;
+  padding-bottom: 25px;
+}
+
+.checkInp{
+  width: 100%;
+max-width: 85%;
+display: flex;
+padding-bottom: 20px;
+
+}
+
+.checkInp label{
+  width: 20%;
+}
+
+.inputContainer{
+width: 100%;
+display: flex;
+justify-content: space-evenly;
+}
+.checkboxContainer{
+  width:100%;
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.checkboxContainer label{
+  width: 100%;
+
+}
+
+.checkboxContainer input{
+  margin-left:-180px;
+}
+
+
+.add-product{
+  width: 100%;
+  max-width: 45%;
+  position: absolute;
+  top: -8px;
+  left: 38%;
+}
+.SlideBarSection ul li{
+  cursor: pointer;
+}
+.login-signup{
+  cursor: pointer;
+}
