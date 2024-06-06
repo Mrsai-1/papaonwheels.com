@@ -59,7 +59,7 @@ const AddBrand = () => {
       } else {
         alert("failed to add firm");
       }
-
+      console.log(data);
       localStorage.setItem("FirmId", data.firmId);
     } catch (error) {
       console.log(error);

@@ -19,7 +19,7 @@ const Login = ({ showWelcomeScreen }) => {
 
       const data = await responce.json();
       if (responce.ok) {
-        console.log(data);
+        // console.log(data);
         localStorage.setItem("loginToken", data.token);
         setEmail("");
         setPassword("");
@@ -27,14 +27,14 @@ const Login = ({ showWelcomeScreen }) => {
         showWelcomeScreen();
       }
       const venderId = data.venderId;
-      console.log(venderId);
+      // console.log(data);
       const venderResponce = await fetch(
         `${API_URL}/vender/single-vender/${venderId}`
       );
       const venderData = await venderResponce.json();
-      if (venderData.ok) {
-        const venderFirmId = venderData.venderFirmId;
-        console.log("checking for firmId", venderFirmId);
+      if (venderResponce.ok) {
+        const venderFirmId = venderData.vendorFirmId;
+        console.log("checking for firmId", venderData);
         localStorage.setItem("FirmId", venderFirmId);
       }
     } catch (error) {

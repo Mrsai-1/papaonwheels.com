@@ -114,3 +114,17 @@ justify-content: space-evenly;
 .login-signup{
   cursor: pointer;
 }
+
+
+.product-table{
+  border:2px solid rgb(236, 12, 12);
+  width:100vh;
+  border-collapse:collapse;
+  margin-top : 50px;
+}
+
+.product-table td,
+.product-table th{
+  border:1px solid gray;
+  padding:8px;
+}
