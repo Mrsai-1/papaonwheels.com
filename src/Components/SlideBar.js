@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SlideBar = ({ShowProductHandler,ShowBrandHandler}) => {
+const SlideBar = ({ShowProductHandler,ShowBrandHandler,showAllProductsScreen,showFirmmTitle}) => {
 
 
 
@@ -9,9 +9,9 @@ const SlideBar = ({ShowProductHandler,ShowBrandHandler}) => {
    <>
    <div className='SlideBarSection'>
       <ul>
-      <li onClick={ShowBrandHandler}>Add Brand</li>
+     {showFirmmTitle && <li onClick={ShowBrandHandler}>Add Brand</li>}
       <li onClick={ShowProductHandler}>Add Product</li>
-      <li>All Products</li>
+      <li onClick={showAllProductsScreen}>All Products</li>
       <li>User Details</li>
       
       </ul>

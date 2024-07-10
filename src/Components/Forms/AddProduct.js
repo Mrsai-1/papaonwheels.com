@@ -8,6 +8,9 @@ const AddProduct = () => {
   const [category, setCatogery] = useState([]);
   const [bestseller, setBestSeller] = useState(false);
   const [description, setDescription] = useState("");
+  const [age,setAge ] = useState("");
+  const [gender,setGender ] = useState("");
+
   const [image, setImage] = useState(null);
 
   const handleImageUpload = (e) => {
@@ -49,6 +52,8 @@ const AddProduct = () => {
       formData.append("image", image);
       formData.append("description", description);
       formData.append("bestseller", bestseller);
+      formData.append("age", age);
+      formData.append("gender", gender);
 
       category.forEach((value) => {
         formData.append("category", value);
@@ -171,6 +176,30 @@ const AddProduct = () => {
               value={description}
               onChange={(e) => {
                 setDescription(e.target.value);
+              }}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group d-flex flex-column">
+            <label>Age</label>
+            <input
+              type="text"
+              name="age"
+              value={age}
+              onChange={(e) => {
+                setAge(e.target.value);
+              }}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group d-flex flex-column">
+            <label>Gender</label>
+            <input
+              type="text"
+              name="gender"
+              value={gender}
+              onChange={(e) => {
+                setGender(e.target.value);
               }}
               className="form-control"
             />

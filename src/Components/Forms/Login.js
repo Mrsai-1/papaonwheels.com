@@ -34,8 +34,12 @@ const Login = ({ showWelcomeScreen }) => {
       const venderData = await venderResponce.json();
       if (venderResponce.ok) {
         const venderFirmId = venderData.vendorFirmId;
-        console.log("checking for firmId", venderData);
+        const venderBrand = venderData.VenderBrandName;
+        console.log("checking for firmId", venderData,venderBrand);
         localStorage.setItem("FirmId", venderFirmId);
+        localStorage.setItem("BrandName", venderBrand);
+        window.location.reload()
+        
       }
     } catch (error) {
       console.log(error);
