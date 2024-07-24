@@ -27,7 +27,7 @@ const Login = ({ showWelcomeScreen }) => {
         showWelcomeScreen();
       }
       const venderId = data.venderId;
-      // console.log(data);
+       console.log(venderId);
       const venderResponce = await fetch(
         `${API_URL}/vender/single-vender/${venderId}`
       );
